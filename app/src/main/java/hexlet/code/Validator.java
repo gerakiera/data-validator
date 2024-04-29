@@ -1,10 +1,10 @@
 package hexlet.code;
 
 public class Validator {
-    public static StringSchema string() {
+    public StringSchema string() {
         return new StringSchema();
     }
-    public static NumberSchema number() {
+    public NumberSchema number() {
         return new NumberSchema();
     }
 }
