@@ -25,7 +25,7 @@ public class NumberSchemaTests {
     }
     @Test
     public void testRrange() {
-        assertTrue(n.range(1,9).isValid(5));
-        assertFalse(n.range(1,3).isValid(5));
+        assertTrue(n.range(1, 9).isValid(5));
+        assertFalse(n.range(1, 3).isValid(5));
     }
 }
