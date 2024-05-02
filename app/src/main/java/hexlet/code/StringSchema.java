@@ -16,6 +16,6 @@ public class StringSchema extends BaseSchema<String> {
     public StringSchema contains(String substring) {
         Predicate<String> containsPredicate = (str) -> str.contains(substring);
         listOfPredicates.add(containsPredicate);
-    return this;
+        return this;
     }
 }
