@@ -5,8 +5,9 @@ import java.util.function.Predicate;
 public class NumberSchema extends BaseSchema<Integer> {
     @Override
     public NumberSchema required() {
-        Predicate<Integer> req = num -> num != null;
-        listOfPredicates.add(req);
+        /*Predicate<Integer> req = num -> num != null;
+        listOfPredicates.add(req);*/
+        super.required();
         return this;
     }
     public NumberSchema positive() {
