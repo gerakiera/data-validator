@@ -9,12 +9,12 @@ public class NumberSchema extends BaseSchema<Integer> {
         return this;
     }
     public NumberSchema positive() {
-        Predicate<Integer> pos = num -> num > 0;
+        Predicate<Integer> pos = num -> num != null && num > 0;
         listOfPredicates.add(pos);
         return this;
     }
     public NumberSchema range(int min, int max) {
-        Predicate<Integer> range = num -> num >= min && num <= max;
+        Predicate<Integer> range = num -> num != null && num >= min && num <= max;
         listOfPredicates.add(range);
         return this;
     }
