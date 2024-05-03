@@ -14,4 +14,16 @@ public class MapSchema extends BaseSchema<Map<String, String>> {
         listOfPredicates.add(mapSize);
         return this;
     }
+    public MapSchema shape(Map<String, BaseSchema<String>> shemas) {
+        listOfPredicates.add(map -> {
+            for (var entry : shemas.entrySet()) {
+                String st = map.get(entry.getKey());
+                if (!entry.getValue().isValid(st)) {
+                    return false;
+                }
+            }
+            return true;
+        });
+        return this;
+    }
 }
