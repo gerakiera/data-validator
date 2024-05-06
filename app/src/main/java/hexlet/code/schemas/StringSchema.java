@@ -2,7 +2,7 @@ package hexlet.code.schemas;
 
 import java.util.function.Predicate;
 
-public class StringSchema extends BaseSchema<String> {
+public final class StringSchema extends BaseSchema<String> {
     public StringSchema required() {
         Predicate<String> required = value -> value != null && !value.isEmpty();
         mapOfPredicates.put("required", required);
