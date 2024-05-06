@@ -11,7 +11,7 @@ public class MapSchema extends BaseSchema<Map<String, String>> {
         return this;
     }*/
     public MapSchema required() {
-        Predicate<Map<String,String>> required = Objects::nonNull;
+        Predicate<Map<String, String>> required = Objects::nonNull;
         listOfPredicates.add(required);
         return this;
     }
