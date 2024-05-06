@@ -4,7 +4,7 @@ import java.util.function.Predicate;
 
 public class StringSchema extends BaseSchema<String> {
     public StringSchema required() {
-        Predicate<String> required = value -> (!value.isEmpty());
+        Predicate<String> required = value -> (value != null && !value.isEmpty());
         listOfPredicates.add(required);
         return this;
     }
@@ -15,9 +15,6 @@ public class StringSchema extends BaseSchema<String> {
     }
 
     public StringSchema contains(String substring) {
-        if (substring == null) {
-            return this;
-        }
         Predicate<String> containsPredicate = (str -> str.contains(substring));
         listOfPredicates.add(containsPredicate);
         return this;
