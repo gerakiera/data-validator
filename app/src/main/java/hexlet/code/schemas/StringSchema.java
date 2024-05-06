@@ -9,13 +9,13 @@ public class StringSchema extends BaseSchema<String> {
         return this;
     }
     public StringSchema minLength(int length) {
-        Predicate<String> minLen = str -> str == null || str.length() >= length;
+        Predicate<String> minLen = str -> str != null && str.length() >= length;
         listOfPredicates.add(minLen);
         return this;
     }
 
     public StringSchema contains(String substring) {
-        Predicate<String> containsPredicate = str -> str == null || str.contains(substring);
+        Predicate<String> containsPredicate = str -> str != null && str.contains(substring);
         listOfPredicates.add(containsPredicate);
         return this;
     }
