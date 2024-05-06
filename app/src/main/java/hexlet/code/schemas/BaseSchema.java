@@ -1,16 +1,16 @@
 package hexlet.code.schemas;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Predicate;
 
 public class BaseSchema<T> {
-    public List<Predicate<T>> listOfPredicates = new ArrayList<>();
+    public Map<String, Predicate<T>> mapOfPredicates = new HashMap<>();
     public boolean isValid(T t) {
-        if (listOfPredicates.isEmpty()) {
+        if (mapOfPredicates.isEmpty()) {
             return true;
         }
-        for (Predicate<T> predicate : listOfPredicates) {
+        for (var predicate : mapOfPredicates.values()) {
             if (!predicate.test(t)) {
                 return false;
             }

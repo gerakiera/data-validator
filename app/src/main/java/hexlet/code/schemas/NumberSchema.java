@@ -6,17 +6,17 @@ import java.util.function.Predicate;
 public class NumberSchema extends BaseSchema<Integer> {
     public NumberSchema required() {
         Predicate<Integer> required = Objects::nonNull;
-        listOfPredicates.add(required);
+        mapOfPredicates.put("required", required);
         return this;
     }
     public NumberSchema positive() {
         Predicate<Integer> pos = num -> num == null || num > 0;
-        listOfPredicates.add(pos);
+        mapOfPredicates.put("positive", pos);
         return this;
     }
     public NumberSchema range(int min, int max) {
         Predicate<Integer> range = num -> num != null && num >= min && num <= max;
-        listOfPredicates.add(range);
+        mapOfPredicates.put("range", range);
         return this;
     }
 }
