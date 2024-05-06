@@ -4,11 +4,6 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 public class NumberSchema extends BaseSchema<Integer> {
-    /*@Override
-    public NumberSchema required() {
-        super.required();
-        return this;
-    }*/
     public NumberSchema required() {
         Predicate<Integer> required = Objects::nonNull;
         listOfPredicates.add(required);

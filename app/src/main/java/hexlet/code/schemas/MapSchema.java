@@ -5,11 +5,6 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 public class MapSchema extends BaseSchema<Map<String, String>> {
-    /*@Override
-    public MapSchema required() {
-        super.required();
-        return this;
-    }*/
     public MapSchema required() {
         Predicate<Map<String, String>> required = Objects::nonNull;
         listOfPredicates.add(required);
