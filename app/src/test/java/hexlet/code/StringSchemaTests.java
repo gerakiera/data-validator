@@ -31,4 +31,23 @@ public final class StringSchemaTests {
         assertTrue(s.contains("hel").isValid(str));
         assertFalse(s.contains("or").isValid(str));
     }
+    @Test
+    public void testAccumulation() {
+        String str = "hello";
+        assertTrue(s.isValid(null));
+        s.required();
+        assertFalse(s.isValid(null));
+        s.contains("hex");
+        assertFalse(s.isValid(str));
+        s.contains("ell");
+        assertTrue(s.isValid(str));
+        s.minLength(3);
+        assertTrue(s.isValid(str));
+    }
+    @Test
+    public void testAll() {
+        String str = "hello";
+        assertTrue(s.required().minLength(4).contains("hel").isValid(str));
+        assertFalse(s.required().minLength(10).contains("ex").isValid(str));
+    }
 }
