@@ -36,14 +36,14 @@ public final class NumberSchemaTests {
         assertTrue(n.isValid(7));
         assertTrue(n.isValid(-1));
         n.positive();
-        n.range(2,4);
+        n.range(2, 4);
         assertTrue(n.isValid(2));
         assertFalse(n.isValid(1));
     }
     @Test
     public void testAll() {
-        assertTrue(n.required().positive().range(2,9).isValid(7));
-        assertFalse(n.required().positive().range(5,10).isValid(2));
-        assertFalse(n.required().positive().range(5,10).isValid(-1));
+        assertTrue(n.required().positive().range(2, 9).isValid(7));
+        assertFalse(n.required().positive().range(5, 10).isValid(2));
+        assertFalse(n.required().positive().range(5, 10).isValid(-1));
     }
 }
